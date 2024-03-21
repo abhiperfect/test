@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import pg from "pg";
 import axios from "axios";
 import path from "path";
-import { dirname } from "path";
+import { __dirname } from "path";
 import { fileURLToPath } from "url";
 import env from "dotenv";
 import connectToDatabase from "./database/connectToDatabase.js";
