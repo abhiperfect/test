@@ -1,0 +1,59 @@
+body {
+  background-color: #121212;
+  /* Dark background color */
+  color: #fff;
+  /* Light text color */
+}
+
+.form-container {
+  background-color: #1e1e1e;
+  /* Dark form background color */
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.form-container h2 {
+  color: #fff;
+  /* Light heading color */
+}
+
+.form-control,
+.btn {
+  background-color: #333;
+  /* Dark input and button background color */
+  color: #fff;
+  /* Light text color for inputs and buttons */
+}
+
+.form-control:focus {
+  border-color: #555;
+  /* Darker border color on focus */
+  background-color: #454545;
+  /* Darker background color on focus */
+  color: #fff;
+  /* Light text color on focus */
+}
+
+.error-message {
+  color: #dc3545;
+  /* Bootstrap danger color for error messages */
+}
+
+/* Highlight message */
+.highlight-animation {
+  color: #ffcc00;
+  /* Yellow color */
+  font-weight: bold;
+  animation: slideIn 1.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

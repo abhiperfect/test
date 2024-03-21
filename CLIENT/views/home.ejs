@@ -1,0 +1,61 @@
+<%- include('partials/header') %>
+
+<body style="padding-top: 50px;">
+  <div class="homeBody" >
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="form-container">
+          <h2 class="text-center mb-4">Submit Form</h2>
+          <!-- Note after the form title -->
+          <p id="animationText" class="text-center text-muted">
+            Add the main function along with your source code and expect the output in the main function.
+          </p>
+          <form id="codeSubmissionForm" method="post" action="/submit" onsubmit="return validateForm()">
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+              <label for="codeLanguage">Preferred Code Language:</label>
+              <select class="form-control" id="codeLanguage" name="codeLanguage" required>
+                <% if (locals.allCodeLanguages) { %>
+                <option value="">Select Language</option>
+                <% locals.allCodeLanguages.forEach(function(language) { %>
+
+                <option value="<%= language.language_name %>" id="<%= language.language_id %>">
+                  <%= language.language_name %>
+                </option>
+
+                <% }); %>
+                <% } %>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="stdin">Standard Input:</label>
+              <textarea class="form-control" id="stdin" name="stdin" rows="3"></textarea>
+            </div>
+            <!-- Warning sign -->
+            <div class="alert alert-warning" role="alert">
+              <strong>Warning:</strong> Do not include any code for printing in your source code. Print statements may
+              interfere with the judging process.
+            </div>
+            <div class="form-group">
+              <label for="sourceCode">Source Code:</label>
+              <textarea class="form-control" id="sourceCode" name="sourceCode" rows="6" required></textarea>
+            </div>
+            <div class="error-message" id="errorMessage"></div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+  // JavaScript to add animation class after a delay
+  document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(function () {
+        document.getElementById('animationText').classList.add('highlight-animation');
+      }, 500); // Delay in milliseconds
+    });
+</script>

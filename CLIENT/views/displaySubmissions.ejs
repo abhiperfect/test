@@ -1,0 +1,78 @@
+<%- include('partials/header') %>
+
+<div class="bodyDisplaySubmission">
+  <!-- Fixed header -->
+  <div class="fixed-header text-center">
+    <h2>All Submissions</h2>
+  </div>
+
+  <!-- Table container -->
+  <div class="container-fluid table-container">
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Code Language</th>
+          <th>Standard Input</th>
+          <th>Source Code</th>
+          <th>Output (stdout)</th>
+          <th>Timestamp</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (locals.allSubmissions) { %>
+         
+        <% allSubmissions.forEach(submission=> { %>
+          <tr>
+            <td>
+              <%= submission.username %>
+            </td>
+            <td>
+              <%= submission.code_language %>
+            </td>
+            <td>
+              <%= submission.stdin %>
+            </td>
+            <td>
+              <%= submission.source_code.substring(0, 100) %>
+            </td>
+            <td>
+              <%= submission.stdout || 'Not available' %>
+            </td>
+            <td>
+              <%= submission.submission_timestamp %>
+            </td>
+            <td>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#messageModal<%= submission.id %>">
+                View Message
+              </button>
+              
+              <div class="modal fade" id="messageModal<%= submission.id %>" tabindex="-1" role="dialog" aria-labelledby="messageModalLabel" aria-hidden="true">
+                <div class="modal-dialog message-modal" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="messageModalLabel">Message</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <%= submission.message %>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <% }); %>
+          <% } %>
+      </tbody>
+    </table>
+  </div>
+
+
+

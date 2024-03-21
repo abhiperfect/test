@@ -1,0 +1,65 @@
+body {
+  padding-top: 120px;
+  /* Offset for fixed header and table header */
+  background-color: #121212;
+  /* Dark background color */
+  color: #fff;
+  /* Light text color */
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #343a40;
+  /* Dark background color for header */
+  color: #fff;
+  /* Light text color for header */
+  padding: 10px 0;
+  /* Padding for header */
+  z-index: 1000;
+  /* Ensure the header stays on top of other content */
+}
+
+.table-container {
+  max-height: calc(100vh - 200px);
+  /* Adjust height according to your layout */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+}
+
+.table {
+  width: 100%;
+  /* Fit table width to the container */
+  background-color: #1e1e1e;
+  /* Dark table background color */
+  color: #fff;
+  /* Light text color */
+}
+
+.table th,
+.table td {
+  border-color: #333;
+  /* Dark border color */
+}
+
+.table-dark {
+  background-color: #1e1e1e;
+  /* Dark table background color */
+}
+
+.table-dark th,
+.table-dark td {
+  border-color: #333;
+  /* Dark border color */
+}
+
+.message-modal {
+  max-width: 90%;
+}
+
+/* Custom CSS for modal text color */
+.modal-body {
+  color: #292727; /* Dark text color */
+}
