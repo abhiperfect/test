@@ -29,10 +29,10 @@ const port = 3000;
 
 
 //FOR IMPORTING CLIENT DATA INTO SERVER
-const __filename = fileURLToPath(import.meta.url); //GET THE CURRENT FILE PATH
-const __dirname = dirname(__filename); //GET THE DIRECTORY PATH OF THE CURRENT FILE
+// const __filename = fileURLToPath(import.meta.url); //GET THE CURRENT FILE PATH
+// const __dirname = dirname(__filename); //GET THE DIRECTORY PATH OF THE CURRENT FILE
 app.set("views", path.join(__dirname, "CLIENT/views")); //SET VIEWS PATH
-app.use(express.static(__dirname + "CLIENT/public"));
+app.use(express.static(path.join(__dirname, "CLIENT/public")));
 app.set("view engine", "ejs");
 
 
