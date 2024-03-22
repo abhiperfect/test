@@ -39,6 +39,7 @@ Welcome to my website! This website serves as a platform for users to submit and
 - `app.js`: Entry point of the application.
 
 ## Contributors
+-Chat-gpt
 
 ## License
 
